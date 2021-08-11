@@ -1815,6 +1815,44 @@
       margin-left: 0;
       margin-right: 2rem;
     }
+
+    .confirm-div{
+      max-width: 800px;
+      width: 700px;
+      padding: 40px;
+      background: white;
+    }
+    .inputs-form{
+        width: 100%;
+        border: 1px solid #eee;
+        padding: 8px 14px;
+        font-size: 16px;
+        box-shadow: none;
+        appearance: none;
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    .btn-confirm{
+      text-align: center;
+      padding: 10px;
+      margin: 12px 0;
+      font-weight: 600;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 18px;
+      width: 100%;
+      display: block;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid #000;
+      appearance: none;
+    }
+    
+    .confirm{
+      background-color: #f4f2f3 !important;
+      min-height: 700px;
+      
+    }
   </style>
   <!-- <noscript id="noscript-static-layout" data-href="https://page.adobespark-assets.com/runtime/1.22/noscript.gz.css">
       <link href="https://page.adobespark-assets.com/runtime/1.22/noscript.gz.css" type="text/css" rel="stylesheet">
@@ -2324,53 +2362,42 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="section single-column-section  large-content-spacing-top large-content-spacing-bottom top-shadow"
-                  data-section-behavior="wiper-single-column" data-layer="1" data-layer-name="over">
-                  <div class="section-view">
-                    <div class="section-content">
-                      <div class="section-content-view">
-                        <div class="content-container">
-                          <div class="image">
-                            <div class="image-wrapper">
-                             <span
-                                  class="image-placeholder-link"
-                                  data-href="images/979ae0b4-dec2-487c-9132-0d44624b8bd9.png?asset_id=cbc15a38-3119-4154-8a3b-610179b22ba8&amp;img_etag=%22847a38a3a682c443baa6e8c6d7fcbf46%22&amp;size=1024"
-                                  style="width: 2560px; padding-top: 16.1328125%" data-image-width="2560"
-                                  data-image-height="413"></span>
-                            </div>
-                          </div>
-                          <h3 class=" text-center">Confirma tu asistencia</h3>
-                          <p class=" text-center">Da clic en el botón inferior para confirmar tu asistencia</p>
-                          <div class="image">
-                            <div class="image-wrapper">
-                              <span
-                                  class="image-placeholder-link"
-                                  data-href="images/3fc89f43-3f25-4cda-aae0-00972f854445.png?asset_id=69a54a1d-6b27-42de-a581-9830644be3a0&amp;img_etag=%22551b8b7b6a006d711195c082a3d6188a%22&amp;size=1024"
-                                  style="width: 89px; padding-top: 85.39325842696628%" data-image-width="89"
-                                  data-image-height="76"></span>
-                            </div>
-                          </div>
-                          <div class="link-button-wrapper link-center">
-                            <a class="link-button " href="https://wa.me/529811586405"
-                              rel="nofollow noreferrer">¡CONFIRMAR ASISTENCIA!</a>
-                          </div>
-                          <h4 class=" text-center">Máx 2 personas (No niños)</h4>
-                          <p class=" text-center">Una vez que nos confirmes tu asistencia te agregaremos a nuestra lista
-                            de invitados</p>
-                          <p class=" text-center"><b>CONFIRMA TU ASISTENCIA ANTES DEL 5 DE MAYO</b></p>
-                          <div class="image">
-                            <div class="image-wrapper">
-                              <span
-                                  class="image-placeholder-link"
-                                  data-href="images/fb41f8ae-24fc-43ae-a101-76e13ccf9427.png?asset_id=88e7f687-3603-4bf5-a90c-f0bd4ffdf6f0&amp;img_etag=%22847a38a3a682c443baa6e8c6d7fcbf46%22&amp;size=1024"
-                                  style="width: 2560px; padding-top: 16.1328125%" data-image-width="2560"
-                                  data-image-height="413"></span>
-                            </div>
-                          </div>
+                <div class='section d-flex align-items-center justify-content-center confirm'>
+                  <div class='confirm-div'>
+                    <form id="deseos" class="form-reservacion" onsubmit="return app.enviarConfirmacion(event)">
+                      <div class="lineas-form"></div>
+                      <h2>Confirma tu asistencia.</h2>
+                      <div class=" row mt-3">
+                        <div class="col-12 mb-3">
+                          <input required="" type="text" placeholder="Nombre completo" class="inputs-form" name="user_name">
                         </div>
                       </div>
-                    </div>
+                      <div class="row">
+                        <div class="col-md-12 mb-3">
+                          <select required="" name="" class="inputs-form" id="invitados">
+                            <option value="" disabled="" selected="">Confirmación de invitados</option>
+                            <option value="0">No asistiré</option>
+                            <option value="1">1 invitado(s)</option>
+                            <option value="2">2 invitado(s)</option>
+                            <option value="3">3 invitado(s)</option>
+                            <option value="4">4 invitado(s)</option>
+                            <option value="5">5 invitado(s)</option>
+                            <option value="6">6 invitado(s)</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class=" row">
+                        <div class='col-md-12'>
+                          <textarea type="text" class="col-12  inputs-form" placeholder="Nombre de invitados"></textarea>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <textarea type="text" class="col-12  inputs-form" placeholder="Dedica un mensaje a Gaby y Oswaldo"></textarea>
+                        </div>
+                      </div>
+                      <button type="submit" class="col-12 mt-3 btn-confirm px-0">Confirmar</button>
+                    </form>
                   </div>
                 </div>
                 <div class="section single-column-section  large-content-spacing-top large-content-spacing-bottom"
