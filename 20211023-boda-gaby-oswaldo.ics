@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:Boda Gaby & Oswaldo\nDate - Oct 23\, 2021 to Oct 24\, 2021\nVenue - Calle Sufragio Efectivo S/N\, Centro\, 62820 Yecapixtla\, Mor.\nGracias por compartir este día con nosotros\n
+DTSTART:20211023
+DTEND:20211025
+LOCATION:Calle Sufragio Efectivo S/N, Centro, 62820 Yecapixtla, Mor.
+SUMMARY;LANGUAGE=en-us:Boda Gaby & Oswaldo
+END:VEVENT
+END:VCALENDAR

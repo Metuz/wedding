@@ -2,27 +2,25 @@ var audio = new Audio("CarlosRivera _TeEsperaba.mp3");
 audio.play();
 function sendEmail(e) {
   e.preventDefault();
-  var user_name = document.getElementById('user_name').value
-  var no_guests = document.getElementById('no_guests').value
-  var guest_names = document.getElementById('guest_names').value
-  var wish = document.getElementById('wish').value
-  clearForm();
-  Email.send({
-      Host: ENV['SMTP'],
-      Username: ENV['EMAIL_APP'],
-      Password: ENV['EMAIL_PASSWORD'],
-      To: ENV['EMAIL'],
-      From: ENV['EMAIL_TO'],
-      Subject: "Hola confirmo mi asistencia a la boda",
-      Body: `Mi nombre es ${user_name} me permito informar que ${no_guests} y los cuales son ${guest_names} y les deseo ${wish}`
-  }).then(
-    message => alert("Invitación enviada")
-  );
-}
+  const user_name = $('#user_name').val();
+  const no_guests = $('#no_guests').val();
+  const guest_names = $('#guest_names').val();
+  const wish = $('#wish').val();
+  const email = $('#email').val();
+  const data = {
+    user_name,
+    email,
+    no_guests,
+    guest_names,
+    wish
+  };
 
-function clearForm(){
-  document.getElementById('user_name').value = ""
-  document.getElementById('no_guests').value  = ""
-  document.getElementById('guest_names').value  = ""
-  document.getElementById('wish').value  = ""
-}
+  $.post('/email', data, function() {
+    alert('Información enviada');
+    $('#user_name').val('');
+    $('#no_guests').val('');
+    $('#guest_names').val('');
+    $('#wish').val('');
+    $('#email').val('');
+  });
+};
