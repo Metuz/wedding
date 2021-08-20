@@ -10,7 +10,7 @@ const transport = nodemailer.createTransport(
 sendMail = (data) => {
 	str = build_html(data)
 	let option = {
-		from:  process.env.EMAIL,
+		from:  process.env.EMAIL_TO,
 		to:  process.env.EMAIL,
 		subject: 'Confirmación',
 		html: str
@@ -20,7 +20,7 @@ sendMail = (data) => {
 
 	if(data.no_guests != '0'){
 		let option = {
-			from:  process.env.EMAIL,
+			from:  process.env.EMAIL_TO,
 			to: data.email,
 			subject: 'Confirmación',
 			html: '<img src="cid:unique@nodemailer.com"/>',
