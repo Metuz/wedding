@@ -1817,3 +1817,6 @@
     .bg-select{
       background: white !important
     }
+    .page-heading-anchor{
+      display: none;
+    }
