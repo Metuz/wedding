@@ -25,12 +25,14 @@ function sendEmail(e) {
   const guest_names = $('#guest_names').val();
   const wish = $('#wish').val();
   const email = $('#email').val();
+  const tel = $('#tel').val();
   const data = {
     user_name,
     email,
     no_guests,
     guest_names,
-    wish
+    wish,
+    tel
   };
 
   $.post('/email', data, function() {
@@ -40,5 +42,6 @@ function sendEmail(e) {
     $('#guest_names').val('');
     $('#wish').val('');
     $('#email').val('');
+    $('#tel').val('');
   });
 };

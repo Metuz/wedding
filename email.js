@@ -11,7 +11,7 @@ sendMail = (data) => {
 	str = build_html(data)
 	let option = {
 		from:  process.env.EMAIL_TO,
-		to:  process.env.EMAIL,
+		to:  process.env.EMAIL_TO,
 		subject: 'Confirmación',
 		html: str
 	};
@@ -44,7 +44,7 @@ build_html = (data) => {
 		str = `<h3>${data.user_name}</h3><p>No asistira a la boda, pero dejo el sigiente mensaje</p><p>${data.wish}</p>`
 	}
 	else{
-		str = `<h3>${data.user_name}</h3><p>Asistira con los siguientes invitados</p><p>${data.guest_names}</p><p>Les desea lo siguiente</p><p>${data.wish}</p>`
+		str = `<h3>${data.user_name}</h3><p>Su teléfono es ${data.tel}</p><p>Asistira con ${data.no_guests} los siguientes invitados</p><p>${data.guest_names}</p><p>Les desea lo siguiente</p><p>${data.wish}</p>`
 	};
 	return str;
 }
